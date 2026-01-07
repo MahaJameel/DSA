@@ -17,11 +17,25 @@ int majorityElement(vector<int>& nums) {
                 freq--;
             }
         }
+
+        // if not exist
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(nums[i]==ans){
+                count++;
+            }
+        }
+        if(count>(n/2)){
+            return ans;
+        }
+        else{
+            return -1; // No majority element
+        }
         return ans;
 }
 
 int main(){
-    vector<int> nums = {1,2,2,1,1};
+    vector<int> nums = {1,2,3,4,5};
 
     cout << majorityElement(nums);
 
